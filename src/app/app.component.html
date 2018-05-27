@@ -1,20 +1,101 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!-- Preloader -->
+<div class="preloader" id="preloader" style="display: none;">
+    <div class="content-spinner">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+        <p>Loading</p>
+    </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- Preloader .end -->
+<!-- Left sidebar -->
+<div class="left-sidebar st-animated fadeInLeftBig animated">
+    <div class="logo">
+        <!-- <h1>UGUR</h1> -->
+    </div>
+    <nav id="nav">
+        <ul>
+            <li class="active">
+                <a href="#home">
+                    <i class="ti-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#about">
+                    <i class="ti-user"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#service">
+                    <i class="ti-ruler-pencil"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#resume">
+                    <i class="ti-agenda"></i>
+                </a>
+            </li>
+            <li class="">
+                <a href="#portfolio">
+                    <i class="ti-briefcase"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="copyright">
+        <p>© 2018</p>
+    </div>
+</div>
+<!-- Left sidebar .end -->
+<!-- Right sidebar -->
+<div class="right-sidebar st-animated fadeInRightBig animated">
+    <div class="btn-contact">
+        <i class="ti-email"></i>
+    </div>
+    <div class="social">
+        <ul>
+            <li>
+                <a href="https://500px.com/uurde" target="_blank">
+                    <i class="ti-camera"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/uurde/" target="_blank">
+                    <i class="ti-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Right sidebar .end -->
+<!-- Mobile top bar (Logo, Menu, Contact button) -->
+<div class="mobile-bar">
 
+    <div class="buttons-mobile">
+        <ul>
+            <li class="btn-menu-mobile">
+                <i class="ti-menu"></i>
+            </li>
+            <li class="btn-contact-mobile">
+                <i class="ti-email"></i>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Mobile top bar .end -->
+<!-- Home section -->
+<div class="wrapper" id="home" style="background-image: url(assets/images/background.jpg);">
+    <div id="particles-js"></div>
+    <div class="content">
+        <span class="st-animated fadeInDown animated">Hello</span>
+        <h2 class="st-animated fadeInUp animated">I'm Uğur</h2>
+        <p class="st-animated fadeInUpBig animated">developer</p>
+    </div>
+</div>
+<!-- Home section .end -->
+<app-body></app-body>
+<div class="content-contact">
+    <app-contact></app-contact>
+</div>
+<div class="overlay-global"></div>

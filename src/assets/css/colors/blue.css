@@ -1,0 +1,62 @@
+
+.left-sidebar .logo,
+.right-sidebar .social ul li i,
+.mobile-bar,
+.buttons a.btn-cnt,
+.buttons a.btn-dwn:hover,
+.data,
+.skill,
+.time-box .time-data:after,
+.filter-select ul li.active,
+.filter-select ul li:hover,
+.content-contact .header-contact{
+  background-color: #536dfe;
+}
+
+.right-sidebar .btn-contact:hover,
+.left-sidebar nav#nav ul li:hover a,
+.left-sidebar nav#nav ul li.active a{
+  border-bottom: 2px dashed #536dfe;
+}
+
+.left-sidebar nav#nav ul li:hover i,
+.left-sidebar nav#nav ul li.active a i,
+.right-sidebar .btn-contact:hover i,
+.service .box i,
+.time-box .time-description strong,
+.header-contact .close-contact{
+  color: #536dfe;
+}
+
+.buttons a,
+.main-contact input:focus,
+.main-contact textarea:focus{
+  border: 2px solid #536dfe;
+}
+
+.buttons a.btn-dwn{
+  color: #536dfe;
+}
+
+.data i,
+.data p{
+  color: #8093fe;
+}
+
+.sk-cnt .progress-bar{
+  background-color: #8093fe;
+}
+
+.filter-select ul li{
+  color: #536dfe;
+  border: 2px solid #536dfe;
+}
+
+.prt-ov .ov{
+  background-color: rgba(83, 109, 254, 0.8);
+}
+
+.main-contact button{
+  background-color: #536dfe;
+  border: 1px solid #536dfe;
+}

@@ -1,0 +1,73 @@
+
+body{
+	background-color: #ffffff;
+	color: #333333;
+}
+
+.left-sidebar,
+.right-sidebar,
+.buttons-mobile ul li,
+.content-contact{
+	background-color: #ffffff;
+}
+
+.left-sidebar,
+.right-sidebar{
+	box-shadow: 0px 0px 10px 0px rgba(77,77,77,0.5);
+}
+
+.left-sidebar .logo h1,
+.right-sidebar .social ul li i,
+.logo-mobile h1,
+.wrapper .content span,
+.wrapper .content h2,
+.wrapper .content p,
+.data span,
+.sk-cnt span,
+.filter-select ul li.active,
+.filter-select ul li:hover,
+.header-contact h3{
+	color: #ffffff;
+}
+
+.left-sidebar nav#nav ul li a,
+.right-sidebar .btn-contact{
+	border-bottom: 1px dashed #bdbdbd;
+}
+
+.left-sidebar nav#nav ul li a i,
+.right-sidebar .btn-contact i{
+	color: #424242;
+}
+
+.buttons-mobile ul li:nth-child(1){
+  border-right: 1px dashed #bdbdbd;
+}
+
+.buttons a.btn-dwn{
+  background-color: #ffffff;
+}
+
+.buttons a.btn-dwn:hover{
+  color: #ffffff;
+}
+
+.service .box span{
+  color: #333333;
+}
+
+.time-box:last-child .time-description{
+  border-left: 2px solid #ffffff;
+}
+
+.time-box .time-data strong{
+  color: #333333;
+}
+
+.time-box .time-data:after{
+  border: 5px solid #ffffff;
+}
+
+.time-box .time-description{
+  border-left: 2px solid #cccccc;
+}
