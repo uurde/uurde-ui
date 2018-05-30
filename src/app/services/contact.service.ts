@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, tap } from "rxjs/operators";
-//import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 
 import { ContactModel } from 'src/app/models/contact.model';
@@ -19,8 +18,9 @@ export class ContactService {
 
     createContact(contact: ContactModel) {
         this._http.post(this._url, contact, this.headerConfig.httpOptions).subscribe(status => console.log(JSON.stringify(status)));
-        //return this._http.post(this._url, JSON.stringify(contact), this.headerConfig.httpOptions).pipe(tap(res => { return res }));
+    }
 
-        //pipe(map(res => res.json())
+    getAllContact(){
+        this._http.get(this._url,this.headerConfig.httpOptions).pipe(tap(res => {return res;}));
     }
 }

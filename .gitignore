@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 
 # Proejct Files
-src/app/services/HeaderConfig.ts
+/src/app/services/HeaderConfig.ts
