@@ -1,18 +1,24 @@
-<!-- Contact section -->
 <div class="header-contact">
   <h3>Contact me</h3>
   <i class="ti-close close-contact"></i>
 </div>
 <div class="main-contact">
-  <form>
-      <input type="text" id="name" name="FullName" placeholder="Name">
-      <input type="text" id="email" name="MailFrom" placeholder="Email">
-      <textarea id="message" name="MailBody" placeholder="Message"></textarea>
-      <!--<input type="button" value="Send" (click)="onSubmit(mailForm)" />-->
-      <button type="submit">send</button>
+  <form (ngSubmit)="onSubmit(contact.form)" #contact="ngForm" >
+    <input type="text" class="form-control" placeholder="Name" name="senderFullName" [(ngModel)]="contact.senderFullName" #senderFullName="ngModel" required>
+    <div *ngIf="contact.submitted && senderFullName.invalid">
+      <div class="alert alert-danger" *ngIf="senderFullName.errors.required">Name required</div>
+    </div>
+    <input type="text" class="form-control" placeholder="Email" name="senderMailAdress" [(ngModel)]="contact.senderMailAdress" #senderMailAdress="ngModel" required>    
+    <div *ngIf="contact.submitted && senderMailAdress.invalid">
+        <div class="alert alert-danger" *ngIf="senderMailAdress.errors.required">Email required</div>
+      </div>
+    <textarea name="MailBody" class="form-control" placeholder="Message" name="mailBody" [(ngModel)]="contact.mailBody" #mailBody="ngModel" required></textarea>    
+    <div *ngIf="contact.submitted && mailBody.invalid">
+        <div class="alert alert-danger" *ngIf="mailBody.errors.required">Name required</div>
+      </div>
+    <button type="submit">send</button>
   </form>
 </div>
 <div class="form-success">
   <i class="ti-check-box"></i>
 </div>
-<!-- Contact section .end -->
