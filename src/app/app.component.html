@@ -1,13 +1,5 @@
 <!-- Preloader -->
-<div class="preloader" id="preloader" style="display: none;">
-    <div class="content-spinner">
-        <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
-        <p>Loading</p>
-    </div>
-</div>
+<app-spinner [visible]="siteLoading"></app-spinner>
 <!-- Preloader .end -->
 <!-- Left sidebar -->
 <div class="left-sidebar st-animated fadeInLeftBig animated">
@@ -44,7 +36,7 @@
         </ul>
     </nav>
     <div class="copyright">
-        <p>© 2018</p>
+        <p>© {{today | date: "yyyy"}}</p>
     </div>
 </div>
 <!-- Left sidebar .end -->
@@ -99,8 +91,118 @@
     </div>
 </div>
 <!-- Home section .end -->
-<app-body></app-body>
+<div class="main">
+
+    <!-- About section -->
+    <div id="about" class="container">
+        <div class="col-md-5 col-sm-12 profile">
+            <img src="http://uur-api-dev.azurewebsites.net/{{user.userPhotoPath}}">
+        </div>
+        <div class="col-md-7 clearfix description">
+            <div style="font-size: 20px;">
+                <div [innerHTML]="user.description"></div>
+            </div>
+            <div class="buttons">
+                <a target="_blank" href="http://uur-api-dev.azurewebsites.net/{{user.userCvPath}}" class="btn-dwn">Download CV</a>
+                <a class="btn-cnt">Contact me</a>
+            </div>
+        </div>
+    </div>
+    <!-- About section .end -->
+    <!-- Skills section -->
+    <div class="service" id="service">
+        <div class="container">
+        </div>
+        <div class="container">
+            <div class="col-md-4 col-sm-6 box" *ngFor="let skill of skills">
+                <div class="col-md-12">
+                    <img src="http://uur-api-dev.azurewebsites.net/{{skill.skillLogoPath}}" width="200px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Skills section .end -->
+    <div class="container">
+        <!-- Resume section -->
+        <div class="resume" id="resume">
+            <h2 class="section-title">My resume</h2>
+            <div class="timeline">
+                <div class="time-box" *ngFor="let resume of resumes">
+                    <div class="time-data">
+                        <strong>{{resume.company}}</strong>
+                        <span>{{resume.startDate | date : "MMM, yyyy"}} - {{resume.endDate ? (resume.endDate | date : "MMM, yyyy")
+                            : "Today "}}</span>
+                    </div>
+                    <div class="time-description">
+                        <strong>{{resume.title}}</strong>
+                        <div [innerHTML]="resume.resumeDescription"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Resume section .end -->
+        <!-- Projects section -->
+        <div id="portfolio">
+            <h2 class="section-title">Projects</h2>
+            <div>
+                <div class="filter-select">
+                    <ul>
+                        <li class="active" data-filter="*">All</li>
+                        <li data-filter="..Net MVC">.Net MVC</li>
+                        <li data-filter="..Net Core">.Net Core</li>
+                        <li data-filter=".Angular">Angular</li>
+                        <li data-filter=".Remedy">Remedy</li>
+                    </ul>
+                </div>
+                It's coming...
+                <!-- <div *ngFor="let project of projects">
+                        <div class="grid" style="position: relative; height: 713.344px;">
+                            <div class="grid-sizer"></div>
+                            <div class="grid-item grid--1 col-md-4">
+                                <div class="prt-ov">
+                                    <div class="ov">
+                                        <div class="ov-box">
+                                            <a class="popup" href="#{{project.projectId}}">
+                                                <i class="ti-search"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="http://uur-api-dev.azurewebsites.net/{{project.projectImagePath}}" alt="">
+                                <div id="{{project.projectId}}" class="zoom-anim-dialog mfp-hide dialog">
+                                    <h3>{{project.projectName}}</h3>
+                                    <img src="http://uur-api-dev.azurewebsites.net/{{project.projectImagePath}}" alt="">
+                                    <div [innerHTML]="project.projectDescription"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+            </div>
+        </div>
+        <!-- Projects section .end -->
+    </div>
+</div>
 <div class="content-contact">
-    <app-contact></app-contact>
+    <div class="header-contact">
+        <h3>Contact me</h3>
+        <i class="ti-close close-contact"></i>
+    </div>
+    <div class="main-contact">
+        <form (ngSubmit)="onSubmit(contact.form); contact.reset()" #contact="ngForm">
+            <input type="text" class="form-control" placeholder="Name" name="senderFullName" [(ngModel)]="contact.senderFullName" #senderFullName="ngModel"
+                required>
+            <div class="alert alert-danger" *ngIf="senderFullName.invalid">Name required</div>
+            <input type="text" class="form-control" placeholder="Email" name="senderMailAdress" [(ngModel)]="contact.senderMailAdress"
+                #senderMailAdress="ngModel" required>
+            <div class="alert alert-danger" *ngIf="senderMailAdress.invalid">Email required</div>
+            <textarea name="MailBody" class="form-control" placeholder="Message" name="mailBody" [(ngModel)]="contact.mailBody" #mailBody="ngModel"
+                required></textarea>
+            <div class="alert alert-danger" *ngIf="mailBody.invalid">Name required</div>
+            <button type="submit" [disabled]="contact.form.invalid">send</button>
+        </form>
+    </div>
+    <div class="form-success">
+        <i class="ti-check-box"></i>
+    </div>
 </div>
 <div class="overlay-global"></div>
